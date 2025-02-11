@@ -1,0 +1,188 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100%;
+}
+
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: orange;
+    color: black;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+main {
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    flex-grow: 1;
+    margin-top: auto;
+}
+
+
+footer {
+    color: white;
+    background-color: #333;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    margin-top: auto;
+    bottom: 0;
+    width: 100%;
+}
+
+
+form p {
+    margin: 20px 0;
+    font-size: 1.2rem;
+}
+
+form .btn {
+    background-color: #0077cc;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+form .btn:hover {
+    background-color: #005fa3;
+}
+
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #005fa3;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.buttons .btn {
+    display: inline-block;
+    background-color: burlywood;
+    color: black;
+    font-weight: bold;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    text-decoration: none;
+    margin: 10px;
+}
+
+.buttons .btn:hover {
+    background-color: #005fa3;
+}
+
+
+@media (max-width: 768px) {
+    .flex-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    table,
+    th,
+    td {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    table,
+    th,
+    td {
+        font-size: 12px;
+    }
+
+    th,
+    td {
+        padding: 4px;
+    }
+}
+
+
+@media print {
+    body {
+        font-size: 12px;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+
+    th,
+    td {
+        padding: 4px;
+    }
+
+    .flex-container,
+    .nav-links,
+    form,
+    h2,
+    canvas {
+        display: none;
+    }
+
+    table {
+        width: 100%;
+    }
+}

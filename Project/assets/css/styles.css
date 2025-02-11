@@ -1,0 +1,269 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100%;
+}
+
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: orange;
+    color: black;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+main {
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    flex-grow: 1;
+    margin-top: auto;
+}
+
+
+footer {
+    color: white;
+    background-color: #333;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    margin-top: auto;
+    width: 100%;
+}
+
+
+form p {
+    margin: 20px 0;
+    font-size: 1.2rem;
+}
+
+form .btn {
+    background-color: #0077cc;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+form .btn:hover {
+    background-color: #005fa3;
+}
+
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #005fa3;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.buttons .btn {
+    display: inline-block;
+    background-color: burlywood;
+    color: black;
+    font-weight: bold;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    text-decoration: none;
+    margin: 10px;
+}
+
+.buttons .btn:hover {
+    background-color: #005fa3;
+}
+
+.table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 1rem -20px;
+    padding: 0 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin: 1rem 0;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-rows: auto 1fr auto;
+    }
+
+    .flex-container {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .nav-links li {
+        margin: 5px 0;
+        text-align: center;
+    }
+
+    @media (max-width: 480px) {
+
+        table,
+        thead,
+        tbody,
+        th,
+        td,
+        tr {
+            display: block;
+        }
+
+        thead {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+        tr {
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+        }
+
+        td {
+            border: none;
+            position: relative;
+            padding-left: 50%;
+        }
+
+        td:before {
+            position: absolute;
+            left: 10px;
+            width: 45%;
+            content: attr(data-label);
+            font-weight: bold;
+            text-align: left;
+        }
+    }
+
+    @media (orientation: landscape) {
+        main {
+            padding: 15px;
+            max-width: 100%;
+        }
+    }
+}
+
+@media print {
+    body {
+        font-size: 20pt;
+        line-height: 1.4;
+        background: white !important;
+        color: black !important;
+    }
+
+    .grid-container>header,
+    .grid-container>footer,
+    .nav-links,
+    .buttons {
+        display: none !important;
+    }
+
+    main {
+        padding: 0 !important;
+        margin: 0 !important;
+        border: none !important;
+        max-width: 100% !important;
+    }
+
+    table {
+        width: 100% !important;
+        border: 2pt solid #000 !important;
+        page-break-inside: avoid;
+    }
+
+    th,
+    td {
+        border: 1pt solid #000 !important;
+        padding: 8pt !important;
+        background: white !important;
+        color: black !important;
+    }
+
+    th {
+        background-color: #eee !important;
+    }
+
+    a::after {
+        content: " (" attr(href) ")";
+        font-size: 0.9em;
+        font-weight: normal;
+    }
+}
+
+/* Large Screens */
+@media (min-width: 1200px) {
+    main {
+        max-width: 1140px;
+    }
+}
